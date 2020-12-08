@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/textdrawable_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="TextView drawableLeft 等示例"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--1.简单显示 可用drawable图片、mipmap下的图片,
+            用drawableStartCompat系列，不用drawableStart,drawableLeft系列-->
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/f8f8f8"
+            android:paddingLeft="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="0dp"
+            android:paddingRight="0dp"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:text="1.简单显示"
+            android:textSize="@dimen/txt_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textdrawable_title"
+            app:layout_constraintVertical_chainStyle="spread" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="24dp"
+            android:background="@color/f8f8f8"
+            android:gravity="center"
+            android:text="文本"
+            app:drawableBottomCompat="@drawable/setting2"
+            app:drawableEndCompat="@drawable/ic_setting"
+            app:drawableStartCompat="@mipmap/floweret64"
+            app:drawableTopCompat="@drawable/ic_setting"
+            app:layout_constraintStart_toStartOf="@+id/textView1"
+            app:layout_constraintTop_toBottomOf="@+id/textView1" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="可用drawable图片、mipmap下的图片,不可以用@color/xxx
+            \n用drawableStartCompat系列，不用drawableStart,drawableLeft系列"
+            android:textColor="@color/f7f7f7"
+            android:textSize="@dimen/txt_small_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView9"
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+        <!--2.drawablePadding指定文本与图片间距、-->
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@color/f8f8f8"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:paddingStart="16dp"
+            android:paddingLeft="16dp"
+            android:paddingEnd="0dp"
+            android:paddingRight="0dp"
+            android:text="2.drawablePadding指定文本与图片间距"
+            android:textSize="@dimen/txt_size"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView1"
+            app:layout_constraintTop_toBottomOf="@+id/textView10"
+            app:layout_constraintVertical_chainStyle="spread" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="24dp"
+            android:background="@color/f8f8f8"
+            android:drawablePadding="8dp"
+            android:text="图片文本间距8dp"
+            app:drawableEndCompat="@drawable/ic_setting"
+            app:drawableStartCompat="@mipmap/floweret64"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+
+        <!--3.图片的大小由图片资源指定且固定，不会跟textview大小变化而变化，不适应按比例显示的方案-->
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@color/f8f8f8"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:text="3.图片的大小"
+            android:paddingStart="16dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="0dp"
+            android:paddingEnd="0dp"
+            android:textStyle="bold"
+            android:textSize="@dimen/txt_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="24dp"
+            android:background="@color/f8f8f8"
+            android:gravity="center"
+            android:textSize="@dimen/txt_small_size"
+            android:text="图片的大小由图片资源指定且固定，不会跟textview大小变化而变化"
+            app:drawableLeftCompat="@mipmap/setting256"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <TextView
+            android:id="@+id/percentTv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/f8f8f8"
+            android:drawablePadding="16dp"
+            android:gravity="center"
+            android:text="按百分比设置的宽高、在代码中修改它的大小。"
+            android:textSize="@dimen/txt_small_size"
+            app:drawableTopCompat="@drawable/ic_setting"
+            app:layout_constraintHeight_percent="0.12"
+            app:layout_constraintStart_toStartOf="@+id/textView13"
+            app:layout_constraintTop_toBottomOf="@+id/textView13"
+            app:layout_constraintWidth_percent="0.70" />
+
+
+        <!--4.着色 api >= 23 开始有这个功能
+            使用 app:drawableTint="xx" 而不是 android:drawableTint="xx"
+            使用 app:drawableTintMode="xx" ,而不是 android:drawableTintMode="xx"
+        -->
+
+        <TextView
+            android:id="@+id/tint"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="24dp"
+            android:background="@color/f8f8f8"
+            android:gravity="center_vertical"
+            android:paddingLeft="16dp"
+            android:text="4.着色"
+            android:textSize="@dimen/txt_size"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/percentTv" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:text="原图a: png #7cba59"
+            android:textSize="@dimen/txt_small_size"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageView2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tint"
+            app:srcCompat="@mipmap/pngsrc" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="原图b：layer-list drawable"
+            android:textSize="@dimen/txt_small_size"
+            app:layout_constraintEnd_toEndOf="@+id/imageView2"
+            app:layout_constraintStart_toStartOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="@+id/textView18" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintEnd_toStartOf="@+id/textView17"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:srcCompat="@drawable/src" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="填充色:#7F6200EE"
+            android:textSize="@dimen/txt_small_size"
+            app:layout_constraintEnd_toEndOf="@+id/textView17"
+            app:layout_constraintStart_toStartOf="@+id/textView17"
+            app:layout_constraintTop_toTopOf="@+id/textView19" />
+
+        <View
+            android:id="@+id/textView17"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@color/tint"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+        <TextView
+            android:id="@+id/tintSrcOver1"
+            android:layout_width="wrap_content"
+            android:layout_height="64dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="24dp"
+            android:background="@color/f8f8f8"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:text="src_over"
+            android:textSize="@dimen/txt_size"
+            app:drawableStartCompat="@mipmap/png"
+            app:drawableTint="@color/tint"
+            app:drawableTintMode="src_over"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+        <TextView
+            android:id="@+id/srcOver2"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:background="@color/f8f8f8"
+            android:drawablePadding="8dp"
+            app:drawableTint="@color/tint"
+            app:drawableTintMode="src_over"
+            android:gravity="center_vertical"
+            android:text="src_over"
+            android:textSize="@dimen/txt_size"
+            app:drawableStartCompat="@drawable/src"
+            app:layout_constraintBottom_toBottomOf="@+id/tintSrcOver1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tintSrcOver1"
+            app:layout_constraintTop_toTopOf="@+id/tintSrcOver1" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/f8f8f8"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:text="src_in"
+            android:textSize="@dimen/txt_size"
+            app:drawableStartCompat="@mipmap/png"
+            app:drawableTint="@color/tint"
+            app:drawableTintMode="src_in"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tintSrcOver1"
+            app:layout_constraintTop_toBottomOf="@+id/tintSrcOver1" />
+
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/f8f8f8"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:text="src_atop"
+            android:textSize="@dimen/txt_size"
+            app:drawableStartCompat="@mipmap/png"
+            app:drawableTint="@color/tint"
+            app:drawableTintMode="src_atop"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tintSrcOver1"
+            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/f8f8f8"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:text="multiply"
+            android:textSize="@dimen/txt_size"
+            app:drawableStartCompat="@mipmap/png"
+            app:drawableTint="@color/tint"
+            app:drawableTintMode="multiply"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tintSrcOver1"
+            app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/f8f8f8"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:text="multiply"
+            android:textSize="@dimen/txt_size"
+            app:drawableStartCompat="@drawable/src"
+            app:drawableTint="@color/tint"
+            app:drawableTintMode="multiply"
+            app:layout_constraintBottom_toBottomOf="@+id/textView22"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView21" />
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/f8f8f8"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:text="screen"
+            android:textSize="@dimen/txt_size"
+            app:drawableStartCompat="@mipmap/png"
+            app:drawableTint="@color/tint"
+            app:drawableTintMode="screen"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tintSrcOver1"
+            app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+        <TextView
+            android:id="@+id/textView26"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="32dp"
+            android:background="@color/f8f8f8"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:text="add"
+            android:textSize="@dimen/txt_size"
+            app:drawableStartCompat="@mipmap/png"
+            app:drawableTint="@color/tint"
+            app:drawableTintMode="add"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tintSrcOver1"
+            app:layout_constraintTop_toBottomOf="@+id/textView23" />
+
+        <TextView
+            android:id="@+id/textView25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/f8f8f8"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:text="screen"
+            android:textSize="@dimen/txt_size"
+            app:drawableStartCompat="@drawable/src"
+            app:drawableTint="@color/tint"
+            app:drawableTintMode="screen"
+            app:layout_constraintBottom_toBottomOf="@+id/textView23"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView24" />
+
+        <TextView
+            android:id="@+id/textView27"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/f8f8f8"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:text="add"
+            android:textSize="@dimen/txt_size"
+            app:drawableStartCompat="@drawable/src"
+            app:drawableTint="@color/tint"
+            app:drawableTintMode="add"
+            app:layout_constraintBottom_toBottomOf="@+id/textView26"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView24" />
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/f8f8f8"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:text="src_atop"
+            android:textSize="@dimen/txt_size"
+            app:drawableStartCompat="@drawable/src"
+            app:drawableTint="@color/tint"
+            app:drawableTintMode="src_atop"
+            app:layout_constraintBottom_toBottomOf="@+id/textView20"
+            app:layout_constraintStart_toStartOf="@+id/textView7" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:background="@color/f8f8f8"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:text="src_in"
+            android:textSize="@dimen/txt_size"
+            app:drawableStartCompat="@drawable/src"
+            app:drawableTint="@color/tint"
+            app:drawableTintMode="src_in"
+            app:layout_constraintBottom_toBottomOf="@+id/textView5"
+            app:layout_constraintStart_toStartOf="@+id/srcOver2"
+            app:layout_constraintTop_toTopOf="@+id/textView5" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/f7f7f7"
+            android:text="上下左右只用这一个属性，哪个方向有图片，间距就是该值"
+            android:textSize="@dimen/txt_small_size"
+            app:layout_constraintStart_toStartOf="@+id/textView11"
+            app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
