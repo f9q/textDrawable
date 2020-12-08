@@ -181,7 +181,7 @@
             android:background="@color/f8f8f8"
             android:gravity="center_vertical"
             android:paddingLeft="16dp"
-            android:text="4.着色"
+            android:text="4.着色 api > 22"
             android:textSize="@dimen/txt_size"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
